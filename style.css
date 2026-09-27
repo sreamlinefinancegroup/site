@@ -1,0 +1,135 @@
+/* Dr Sheikh Omar Rashid — site styles */
+:root{
+  --night:#150d2b; --plum:#2c1850; --plum-2:#3d2270;
+  --gold:#c9a24b; --gold-2:#e8cc84;
+  --paper:#fbf8f2; --card:#ffffff; --ink:#1f1633; --muted:#5b5270; --line:#e8e0d0;
+  --wa:#1e9e57; --wa-dark:#16804a;
+  --radius:14px; --wrap:1120px;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 var(--sans)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--plum-2);text-underline-offset:3px}
+a:hover{color:#6b3fb0}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;color:var(--plum);margin:0 0 .5em}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-top:2.2em;scroll-margin-top:90px}
+h3{font-size:1.4rem;margin-top:1.6em}
+p{margin:0 0 1.1em}
+ul,ol{padding-left:1.3em;margin:0 0 1.2em}
+li{margin-bottom:.4em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:100}
+.skip:focus{left:8px}
+
+/* Header */
+.site-header{background:var(--night);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(201,162,75,.35)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font-family:var(--serif);font-size:1.3rem;letter-spacing:.3px;color:var(--gold-2);display:block;line-height:1.1}
+.brand small{display:block;white-space:nowrap;font-size:.72rem;color:#cfc4e6;letter-spacing:.8px;text-transform:uppercase}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:8px 12px;font:600 .9rem var(--sans);cursor:pointer}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px;flex-wrap:nowrap}
+.main-nav li{margin:0}
+.main-nav a{display:block;color:#e9e3f5;text-decoration:none;font-size:.92rem;padding:8px 9px;border-radius:8px;white-space:nowrap}
+.main-nav a:hover,.main-nav a[aria-current="page"]{background:rgba(201,162,75,.18);color:var(--gold-2)}
+@media (max-width:1100px){
+  .menu-btn{display:block}
+  .main-nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--night);border-bottom:1px solid rgba(201,162,75,.35);padding:8px 16px 16px}
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column}
+  .main-nav a{padding:12px 10px;font-size:1rem}
+}
+
+/* Hero */
+.hero{color:#f3eefc;padding:56px 0 64px;
+  background:
+   radial-gradient(1px 1px at 12% 22%,#fff8 50%,transparent 51%),
+   radial-gradient(1px 1px at 72% 18%,#fff9 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 38% 70%,#fff7 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 64%,#fff8 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 56% 40%,#ffe9a8aa 50%,transparent 51%),
+   radial-gradient(ellipse at 80% 0%,#4a2687 0%,transparent 55%),
+   radial-gradient(ellipse at 0% 100%,#3a1c63 0%,transparent 50%),
+   var(--night)}
+.hero h1{color:#fff}
+.hero h1 span{color:var(--gold-2)}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-2);border:1px solid rgba(232,204,132,.45);border-radius:999px;padding:4px 12px;margin-bottom:16px}
+.lead{font-size:1.15rem;max-width:760px;color:#ddd4ef}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 22px;font-size:1rem;line-height:1.2;border:2px solid transparent}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-dark);color:#fff}
+.btn-gold{background:var(--gold);color:#1a1030}
+.btn-gold:hover{background:var(--gold-2);color:#1a1030}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-2)}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:24px 0 0;font-size:.92rem;color:#cfc4e6}
+.trust li::before{content:"✦ ";color:var(--gold)}
+
+/* Content */
+.content{padding:28px 16px 40px}
+.crumbs{font-size:.88rem;color:var(--muted);margin-bottom:10px}
+.crumbs a{color:var(--muted)}
+.prose{max-width:780px}
+.answer{background:#fff;border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0;box-shadow:0 1px 0 var(--line)}
+.toc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:8px 0 10px;max-width:780px}
+.toc strong{font-family:var(--serif);font-size:1.25rem;color:var(--plum)}
+.toc ol{margin:.5em 0 0;columns:2;column-gap:56px;font-size:.95rem;padding-left:1.6em}
+.toc li{break-inside:avoid}
+@media (max-width:700px){.toc ol{columns:1}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:18px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column}
+.card h3{margin-top:0;font-size:1.35rem}
+.card p{color:var(--muted);font-size:.97rem}
+.card .more{margin-top:auto;font-weight:700;text-decoration:none}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 16px;margin:0}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--plum);color:var(--gold-2);font-weight:700;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:10px 0 18px;font-size:.96rem}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3eee3;color:var(--plum);font-weight:700}
+.table-wrap{overflow-x:auto}
+.note{background:#f4efe3;border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.tags li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem;margin:0}
+.recipe{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:12px 0 18px}
+.recipe h4{margin:0 0 .4em;font-size:1rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+
+/* FAQ */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 18px}
+.faq summary{cursor:pointer;font-weight:700;padding:15px 0;color:var(--plum);list-style:none;position:relative;padding-right:28px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:12px;font-size:1.4rem;color:var(--gold)}
+.faq details[open] summary::after{content:"–"}
+.faq details>div{padding:0 0 14px}
+
+/* CTA band */
+.cta-band{background:linear-gradient(135deg,var(--plum),var(--night));color:#eee7fa;border-radius:20px;padding:30px 26px;margin:44px 0 10px}
+.cta-band h2{color:#fff;margin-top:0}
+.cta-band p{color:#d8cfee;max-width:700px}
+
+/* Contact form */
+.form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;max-width:640px}
+.form label{display:block;font-weight:700;font-size:.95rem;margin:12px 0 4px}
+.form input,.form select,.form textarea{width:100%;font:16px var(--sans);padding:11px 12px;border:1px solid #cfc6b4;border-radius:10px;background:#fffdf9}
+.form textarea{min-height:130px}
+.form button{margin-top:16px;cursor:pointer}
+
+/* Footer */
+.site-footer{background:var(--night);color:#cfc4e6;padding:40px 0 90px;margin-top:40px;font-size:.95rem}
+.site-footer a{color:#e9e3f5}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.site-footer h3{color:var(--gold-2);font-size:1.25rem;margin-top:0}
+.site-footer ul{list-style:none;padding:0}
+.disclaimer{border-top:1px solid rgba(255,255,255,.15);margin-top:26px;padding-top:18px;font-size:.84rem;color:#a99dc4}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 18px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;align-items:center;gap:8px}
+.wa-float:hover{background:var(--wa-dark);color:#fff}
+.wa-float svg{width:22px;height:22px}

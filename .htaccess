@@ -1,0 +1,4 @@
+# Used only on Apache/cPanel hosting. Other hosts ignore this file.
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+Options -Indexes
