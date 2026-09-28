@@ -200,3 +200,19 @@ html.translated-ltr main .notranslate,html.translated-rtl main .notranslate{marg
 .testimonial details{font-size:.93rem;margin:0 2px}
 .testimonial summary{cursor:pointer;font-weight:700;color:var(--plum-2)}
 .testimonial details p{margin:.5em 0}
+
+/* Hero with a testimonial video (homepage) */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"text" "media" "actions";column-gap:44px}
+.hero-text{grid-area:text}.hero-actions{grid-area:actions}
+.hero-media{grid-area:media;margin:6px 0 4px;max-width:420px;width:100%}
+.hero-media video{display:block;width:100%;height:auto;max-height:68vh;object-fit:contain;background:#000;border-radius:14px;border:1px solid rgba(232,204,132,.35)}
+.hero-media figcaption{font-size:.95rem;color:#e9e3f5;margin-top:10px;font-family:var(--serif);font-size:1.12rem;line-height:1.35}
+.hero-media cite{display:block;font-family:var(--sans);font-style:normal;font-size:.82rem;color:#cfc4e6;margin-top:4px}
+.hero-media details{font-family:var(--sans);font-size:.88rem;margin-top:6px;color:#ddd4ef}
+.hero-media summary{cursor:pointer;color:var(--gold-2);font-weight:700}
+.hero-media details p{margin:.4em 0}
+@media (min-width:900px){
+  .hero.has-media .hero-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"text media" "actions media";align-items:start}
+  .hero.has-media .hero-media{justify-self:end;margin-top:0}
+}
+.testimonials.single{grid-template-columns:minmax(0,480px)}
