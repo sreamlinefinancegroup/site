@@ -216,3 +216,7 @@ html.translated-ltr main .notranslate,html.translated-rtl main .notranslate{marg
   .hero.has-media .hero-media{justify-self:end;margin-top:0}
 }
 .testimonials.single{grid-template-columns:minmax(0,480px)}
+
+/* Hero photo (About page) */
+.hero-photo img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid rgba(232,204,132,.35);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.hero-photo figcaption{font-family:var(--sans);font-size:.88rem;color:#cfc4e6;text-align:center}
