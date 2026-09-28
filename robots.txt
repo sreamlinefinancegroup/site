@@ -82,4 +82,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://exloverback.online/sitemap.xml
+Sitemap: https://www.returnexlover.com/sitemap.xml
