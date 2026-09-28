@@ -1,21 +1,21 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "exloverback.online" }],
-      "destination": "https://www.returnexlover.com/:path*",
+      "destination": "https://www.returnexlover.com/:path",
       "statusCode": 301
     },
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "www.exloverback.online" }],
-      "destination": "https://www.returnexlover.com/:path*",
+      "destination": "https://www.returnexlover.com/:path",
       "statusCode": 301
     },
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "returnexlover.com" }],
-      "destination": "https://www.returnexlover.com/:path*",
+      "destination": "https://www.returnexlover.com/:path",
       "statusCode": 301
     }
   ]
